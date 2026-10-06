@@ -1,0 +1,21 @@
+{
+  "name": "rabbitmq-sample",
+  "version": "1.0.0",
+  "description": "Node.js + RabbitMQ sample (work queue & pub/sub) using amqplib",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "rabbit:up": "docker compose up -d --wait",
+    "rabbit:down": "docker compose down",
+    "produce": "node src/work-queue/producer.js",
+    "worker": "node src/work-queue/worker.js",
+    "publish": "node src/pubsub/publisher.js",
+    "subscribe": "node src/pubsub/subscriber.js"
+  },
+  "dependencies": {
+    "amqplib": "^2.2.0"
+  }
+}
